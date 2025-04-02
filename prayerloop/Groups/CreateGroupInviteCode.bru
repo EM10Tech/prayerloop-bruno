@@ -1,0 +1,15 @@
+meta {
+  name: CreateGroupInviteCode
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{siteUrl}}/groups/5/invite
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

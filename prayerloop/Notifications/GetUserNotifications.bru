@@ -1,0 +1,15 @@
+meta {
+  name: GetUserNotifications
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{siteUrl}}/users/1/notifications
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

@@ -1,0 +1,24 @@
+meta {
+  name: UpdatePrayer
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{siteUrl}}/prayers/4
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "prayerType": "request",
+    "isPrivate": false,
+    "title": "Updated with bruno",
+    "prayerDescription": "This prayer was updated with bruno"
+  }
+}

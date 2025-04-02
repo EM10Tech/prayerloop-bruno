@@ -1,0 +1,15 @@
+meta {
+  name: GetUserPrayers
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{siteUrl}}/users/3/prayers
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

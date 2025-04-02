@@ -1,0 +1,24 @@
+meta {
+  name: UpdateGroup
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{siteUrl}}/groups/13
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "groupName": "Bruno group 3 -- updated",
+    "groupDescription": "Made with bruno",
+    "isActive": true,
+    "deleted": false
+  }
+}

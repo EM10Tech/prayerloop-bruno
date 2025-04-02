@@ -1,0 +1,23 @@
+meta {
+  name: DeleteGroup
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{siteUrl}}/groups/12
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "groupName": "Bruno group 5 -- updated",
+    "groupDescription": "Made with bruno",
+    "isActive": true
+  }
+}

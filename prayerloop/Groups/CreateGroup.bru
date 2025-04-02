@@ -1,0 +1,22 @@
+meta {
+  name: CreateGroup
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{siteUrl}}/groups
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "groupName": "Bruno group 3",
+    "groupDescription": "Made with bruno"
+  }
+}

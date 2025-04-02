@@ -1,0 +1,31 @@
+meta {
+  name: GetPrayer
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{siteUrl}}/prayers/2
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "User_ID": 2,
+    "Group_ID": 0,
+    "Is_Private": false,
+    "Title": "UPDATED TITLE 3",
+    "Description": "This is a prayer request description that is a bit longer.  I want to test the functionality of how everything will respond with a longer description.  This should cause the UI to create a bigger card.",
+    "Is_Answered": false,
+    "Is_Ongoing": true,
+    "Priority": 0,
+    "Datetime_Answered": null,
+    "Created_By": 1,
+    "Updated_By": 1
+  }
+}

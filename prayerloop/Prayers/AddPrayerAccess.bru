@@ -1,0 +1,22 @@
+meta {
+  name: AddPrayerAccess
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{siteUrl}}/prayers/5/access
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "accessType": "group",
+    "accessTypeId": 4
+  }
+}

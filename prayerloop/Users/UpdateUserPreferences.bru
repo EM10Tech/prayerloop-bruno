@@ -1,0 +1,23 @@
+meta {
+  name: UpdateUserPreferences
+  type: http
+  seq: 8
+}
+
+patch {
+  url: {{siteUrl}}/users/2/preferences/3
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "preferenceKey": "theme",
+    "preferenceValue": "light",
+    "isActive": true
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: GetGroups
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{siteUrl}}/groups
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

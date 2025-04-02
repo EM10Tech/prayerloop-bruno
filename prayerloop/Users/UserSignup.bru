@@ -1,0 +1,25 @@
+meta {
+  name: UserSignup
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{siteUrl}}/users
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "username": "user46",
+    "password": "123",
+    "email": "test1@test.com",
+    "firstName": "user45",
+    "lastName": "user45 last name"
+  }
+}

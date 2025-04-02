@@ -1,0 +1,15 @@
+meta {
+  name: RemoveUserFromGroup
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{siteUrl}}/groups/3/users/12
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

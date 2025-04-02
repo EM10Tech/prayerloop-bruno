@@ -1,0 +1,25 @@
+meta {
+  name: CreateUserPrayer
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{siteUrl}}/users/3/prayers
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "prayerType": "request",
+    "isPrivate": false,
+    "title": "Made with bruno6",
+    "prayerDescription": "This prayer was made with bruno"
+  }
+  
+}

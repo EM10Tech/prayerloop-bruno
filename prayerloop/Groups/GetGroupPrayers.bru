@@ -1,0 +1,15 @@
+meta {
+  name: GetGroupPrayers
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{siteUrl}}/groups/2/prayers
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

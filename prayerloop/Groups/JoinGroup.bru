@@ -1,0 +1,21 @@
+meta {
+  name: JoinGroup
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{siteUrl}}/groups/5/join
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "inviteCode": "0005-60A2"
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: RemovePrayerAccess
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{siteUrl}}/prayers/2/access/25
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
