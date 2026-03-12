@@ -1,0 +1,27 @@
+meta {
+  name: PublicUserSignup
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{siteUrl}}/signup
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "username": "zdelcoco9",
+    "password": "123456",
+    "email": "",
+    "phoneNumber": "9018491920",
+    "email": "deez@nuts.com",
+    "firstName": "Zachary",
+    "lastName": "Delcoco"
+  }
+}

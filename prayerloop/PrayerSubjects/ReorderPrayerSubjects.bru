@@ -1,0 +1,25 @@
+meta {
+  name: ReorderPrayerSubjects
+  type: http
+  seq: 8
+}
+
+patch {
+  url: {{siteUrl}}/users/14/prayer-subjects/reorder
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "subjects": [
+      {"prayerSubjectId": 1, "displaySequence": 0},
+      {"prayerSubjectId": 2, "displaySequence": 1},
+      {"prayerSubjectId": 3, "displaySequence": 2}
+    ]
+  }
+}

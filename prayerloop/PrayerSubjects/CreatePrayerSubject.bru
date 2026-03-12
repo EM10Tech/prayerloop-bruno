@@ -1,0 +1,23 @@
+meta {
+  name: CreatePrayerSubject
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{siteUrl}}/users/15/prayer-subjects
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "prayerSubjectType": "individual",
+    "prayerSubjectDisplayName": "Bob",
+    "notes": ""
+  }
+}

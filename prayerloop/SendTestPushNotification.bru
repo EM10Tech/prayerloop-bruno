@@ -1,0 +1,29 @@
+meta {
+  name: Send Test Push Notification
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{siteUrl}}/notifications/send
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "userIds": [1],
+    "title": "Test Notification",
+    "body": "This is a test notification from Bruno",
+    "data": {
+      "type": "test",
+      "timestamp": "2025-10-22T21:33:00-05:00"
+    },
+    "priority": "high"
+  }
+}

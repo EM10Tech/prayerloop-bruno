@@ -1,0 +1,19 @@
+meta {
+  name: SearchUserByEmail
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{siteUrl}}/users/search?email=chook@boo.com
+  body: none
+  auth: none
+}
+
+params:query {
+  email: chook@boo.com
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

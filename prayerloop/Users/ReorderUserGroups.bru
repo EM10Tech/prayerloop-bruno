@@ -1,0 +1,25 @@
+meta {
+  name: ReorderUserGroups
+  type: http
+  seq: 10
+}
+
+patch {
+  url: {{siteUrl}}/users/1/groups/reorder
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "groups": [
+      {"groupId": 1, "displaySequence": 0},
+      {"groupId": 2, "displaySequence": 1},
+      {"groupId": 3, "displaySequence": 2}
+    ]
+  }
+}

@@ -1,11 +1,11 @@
 meta {
-  name: RemoveUserFromGroup
+  name: GetGroupPrayers
   type: http
-  seq: 8
+  seq: 1
 }
 
-delete {
-  url: {{siteUrl}}/groups/3/users/12
+get {
+  url: {{siteUrl}}/groups/14/prayers
   body: none
   auth: none
 }

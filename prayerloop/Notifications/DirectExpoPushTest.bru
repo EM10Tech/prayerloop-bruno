@@ -1,0 +1,28 @@
+meta {
+  name: Direct Expo Push Test
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://exp.host/--/api/v2/push/send
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "to": "ExponentPushToken[4CTmjqBska99kAfEr_GK7_]",
+    "title": "🧪 Direct Expo Test",
+    "body": "Testing push notification directly through Expo API",
+    "data": {
+      "type": "test",
+      "timestamp": 1757335200
+    },
+    "priority": "default"
+  }
+}

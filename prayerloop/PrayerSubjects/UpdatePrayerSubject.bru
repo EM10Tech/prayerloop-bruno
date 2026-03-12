@@ -1,0 +1,22 @@
+meta {
+  name: UpdatePrayerSubject
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{siteUrl}}/prayer-subjects/37
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "prayerSubjectDisplayName": "Mom (Updated)",
+    "notes": "Updated notes for mom"
+  }
+}

@@ -1,11 +1,11 @@
 meta {
-  name: AddUserToGroup
+  name: GetUserPrayerSubjects
   type: http
-  seq: 7
+  seq: 1
 }
 
-post {
-  url: {{siteUrl}}/groups/3/users/12
+get {
+  url: {{siteUrl}}/users/15/prayer-subjects
   body: none
   auth: none
 }

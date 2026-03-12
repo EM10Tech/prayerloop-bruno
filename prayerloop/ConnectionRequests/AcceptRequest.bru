@@ -1,11 +1,11 @@
 meta {
-  name: JoinGroup
+  name: AcceptRequest
   type: http
   seq: 7
 }
 
-post {
-  url: {{siteUrl}}/groups/14/join
+patch {
+  url: {{siteUrl}}/connection-requests/1
   body: json
   auth: none
 }
@@ -16,6 +16,6 @@ headers {
 
 body:json {
   {
-    "inviteCode": "0014-3AFF"
+    "status": "accepted"
   }
 }

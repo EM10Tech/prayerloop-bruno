@@ -1,0 +1,57 @@
+meta {
+  name: Test Email Service
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/test/email
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "zdelcoco@gmail.com",
+    "firstName": "Zach"
+  }
+}
+
+docs {
+  # Test Email Service
+
+  This endpoint sends a test password reset email to verify the Resend email service is working correctly.
+
+  ## Request Body
+  - `email` (required): Email address to send test to
+  - `firstName` (optional): First name to use in email greeting (defaults to "Test User")
+
+  ## Expected Response
+  ```json
+  {
+    "message": "Test email sent successfully!",
+    "email": "zdelcoco@gmail.com",
+    "code": "123456",
+    "firstName": "Zach",
+    "note": "Check your inbox for the password reset email with code: 123456"
+  }
+  ```
+
+  ## What to Check
+  1. Response returns 200 OK
+  2. Check your email inbox for the password reset email
+  3. Verify the email has:
+     - PrayerLoop branding
+     - 6-digit code (123456)
+     - Professional formatting
+     - 15-minute expiration notice
+     - Security warning
+
+  ## Troubleshooting
+  - If you get "Email service is not initialized", check `.env` file for `RESEND_API_KEY`
+  - If email doesn't arrive, check spam/junk folder
+  - Check backend logs for detailed error messages
+
+  ## Note
+  This is a TEST endpoint - remove before production deployment!
+}

@@ -1,0 +1,15 @@
+meta {
+  name: GetIncomingRequestsAll
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{siteUrl}}/users/14/connection-requests/incoming?status=all
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

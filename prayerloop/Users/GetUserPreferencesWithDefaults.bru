@@ -1,11 +1,11 @@
 meta {
-  name: CreateGroupInviteCode
+  name: GetUserPreferencesWithDefaults
   type: http
-  seq: 6
+  seq: 7
 }
 
-post {
-  url: {{siteUrl}}/groups/3/invite
+get {
+  url: {{siteUrl}}/users/13/preferences
   body: none
   auth: none
 }

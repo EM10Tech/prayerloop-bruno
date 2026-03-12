@@ -1,0 +1,25 @@
+meta {
+  name: Check Push Receipts
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://exp.host/--/api/v2/push/getReceipts
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "ids": [
+      "01992614-b6cb-70fa-ab8d-30bf80fe8bf2",
+      "01992614-c103-72be-90f3-1b7b08830c7f",
+      "01992615-2f74-7db8-a5a4-4ae7b9313547"
+    ]
+  }
+}

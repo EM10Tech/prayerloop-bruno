@@ -1,11 +1,11 @@
 meta {
-  name: CreateGroupInviteCode
+  name: GetGroupUsers
   type: http
-  seq: 6
+  seq: 1
 }
 
-post {
-  url: {{siteUrl}}/groups/3/invite
+get {
+  url: {{siteUrl}}/groups/18/users
   body: none
   auth: none
 }

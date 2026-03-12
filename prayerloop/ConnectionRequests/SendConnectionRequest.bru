@@ -1,11 +1,11 @@
 meta {
-  name: AddPrayerAccess
+  name: SendConnectionRequest
   type: http
-  seq: 4
+  seq: 2
 }
 
 post {
-  url: {{siteUrl}}/prayers/118/access
+  url: {{siteUrl}}/connection-requests
   body: json
   auth: none
 }
@@ -16,7 +16,7 @@ headers {
 
 body:json {
   {
-    "accessType": "group",
-    "accessTypeId": 14
+    "targetUserId": 2,
+    "prayerSubjectId": 1
   }
 }

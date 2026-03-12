@@ -1,0 +1,15 @@
+meta {
+  name: DeletePrayerSubjectWithReassign
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{siteUrl}}/prayer-subjects/1?reassignToSelf=true
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}

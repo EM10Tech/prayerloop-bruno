@@ -1,0 +1,74 @@
+meta {
+  name: Verify Reset Code
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/auth/verify-reset-code
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "zdelcoco@gmail.com",
+    "code": "865891"
+  }
+}
+
+docs {
+  # Verify Reset Code (Step 2)
+  
+  Verifies the 6-digit code from the email and returns a temporary token for password reset.
+  
+  ## Request Body
+  - `email` (required): Email address
+  - `code` (required): 6-digit verification code from email (must be exactly 6 digits)
+  
+  ## Expected Response (200 OK)
+  ```json
+  {
+    "message": "Verification code is valid",
+    "token": "MToxNzI5MjU...",
+    "userId": 1
+  }
+  ```
+  
+  ## Security Features
+  - Code must not be expired (15 minutes from creation)
+  - Code must not be used already
+  - Maximum 3 verification attempts per code
+  - Temporary token valid for 5 minutes
+  
+  ## Error Responses
+  
+  **Invalid or expired code (401):**
+  ```json
+  {
+    "error": "Invalid or expired verification code"
+  }
+  ```
+  
+  **Max attempts exceeded (401):**
+  ```json
+  {
+    "error": "Maximum verification attempts exceeded. Please request a new code."
+  }
+  ```
+  
+  ## What Happens
+  1. Backend finds user by email
+  2. Looks up most recent unused, non-expired code
+  3. Increments attempt counter
+  4. Generates temporary token (valid 5 minutes)
+  5. Returns token for final password reset step
+  
+  ## Next Step
+  Copy the `token` from the response and use it in the **Reset Password** endpoint.
+  
+  ## Testing Notes
+  - Replace "123456" with the actual code from your email
+  - Token expires in 5 minutes, so proceed to step 3 quickly
+  - If you fail 3 times, request a new code (step 1)
+}

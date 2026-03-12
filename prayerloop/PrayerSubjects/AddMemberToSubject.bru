@@ -1,0 +1,22 @@
+meta {
+  name: AddMemberToSubject
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{siteUrl}}/prayer-subjects/38/members
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "memberPrayerSubjectId": 39,
+    "membershipRole": "member"
+  }
+}

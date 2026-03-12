@@ -1,0 +1,23 @@
+meta {
+  name: CreatePrayerSubjectFamily
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{siteUrl}}/users/15/prayer-subjects
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "prayerSubjectType": "family",
+    "prayerSubjectDisplayName": "The Johnson Family",
+    "notes": "Our neighbors going through a difficult time"
+  }
+}

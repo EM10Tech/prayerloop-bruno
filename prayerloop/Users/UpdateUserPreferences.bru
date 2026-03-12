@@ -1,11 +1,11 @@
 meta {
   name: UpdateUserPreferences
   type: http
-  seq: 8
+  seq: 6
 }
 
 patch {
-  url: {{siteUrl}}/users/2/preferences/3
+  url: {{siteUrl}}/users/13/preferences/1
   body: json
   auth: none
 }
@@ -16,8 +16,8 @@ headers {
 
 body:json {
   {
-    "preferenceKey": "theme",
-    "preferenceValue": "light",
+    "preferenceKey": "notifications",
+    "preferenceValue": "false",
     "isActive": true
   }
 }

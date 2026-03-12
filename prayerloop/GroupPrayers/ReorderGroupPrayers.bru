@@ -1,0 +1,25 @@
+meta {
+  name: ReorderGroupPrayers
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{siteUrl}}/groups/3/prayers/reorder
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+}
+
+body:json {
+  {
+    "prayers": [
+      {"prayerId": 1, "displaySequence": 0},
+      {"prayerId": 2, "displaySequence": 1},
+      {"prayerId": 3, "displaySequence": 2}
+    ]
+  }
+}

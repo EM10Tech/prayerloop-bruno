@@ -1,0 +1,45 @@
+meta {
+  name: SendPushNotificationTest
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{siteUrl}}/notifications/send
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwt}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "userIds": [1],
+    "title": "🙏 Test Push Notification",
+    "body": "This is a direct API test of push notifications from Bruno!",
+    "data": {
+      "type": "test",
+      "source": "bruno",
+      "timestamp": "{{timestamp}}"
+    },
+    "priority": "high",
+    "sound": "default"
+  }
+}
+
+vars:pre-request {
+  timestamp: new Date().toISOString()
+}
+
+tests {
+  test("Status is 200", function() {
+    expect(res.status).to.equal(200);
+  });
+  
+  test("Response contains success", function() {
+    expect(res.body).to.have.property('message');
+  });
+}

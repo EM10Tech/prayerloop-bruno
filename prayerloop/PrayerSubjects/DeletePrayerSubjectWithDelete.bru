@@ -1,11 +1,11 @@
 meta {
-  name: RemovePrayerAccess
+  name: DeletePrayerSubjectWithDelete
   type: http
-  seq: 3
+  seq: 7
 }
 
 delete {
-  url: {{siteUrl}}/prayers/118/access/130
+  url: {{siteUrl}}/prayer-subjects/1?deletePrayers=true
   body: none
   auth: none
 }

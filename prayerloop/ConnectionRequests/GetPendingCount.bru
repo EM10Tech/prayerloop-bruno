@@ -1,11 +1,11 @@
 meta {
-  name: CreateGroupInviteCode
+  name: GetPendingCount
   type: http
   seq: 6
 }
 
-post {
-  url: {{siteUrl}}/groups/3/invite
+get {
+  url: {{siteUrl}}/users/14/connection-requests/count
   body: none
   auth: none
 }
